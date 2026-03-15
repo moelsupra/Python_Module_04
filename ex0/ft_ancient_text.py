@@ -7,7 +7,7 @@ def main() -> None:
     print(f"Accessing Storage Vault: {filename}")
 
     try:
-        read_file = open(filename, "r", encoding="utf-8") #read about utf-8 and encoding
+        read_file = open(filename, "r")
         print("Connection established...")
         print()
         content = read_file.read()
@@ -15,8 +15,8 @@ def main() -> None:
         print(content)
         print()
         print("Data recovery complete. Storage unit disconnected.")
-    except FileNotFoundError: # ask if i should except an other errors PermissionError... ?
-        print("ERROR: Storage vault not found. Run data generator first.") #check this message was asked ? 
+    except FileNotFoundError:
+        print("ERROR: Storage vault not found. Run data generator first.")
     finally:
         if read_file:
             read_file.close()

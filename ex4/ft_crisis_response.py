@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 def crisis_handler(file_name: str, routine: bool = False) -> None:
     if routine:
         print(f"ROUTINE ACCESS: Attempting access to '{file_name}'...")
@@ -8,7 +5,7 @@ def crisis_handler(file_name: str, routine: bool = False) -> None:
         print(f"CRISIS ALERT: Attempting access to '{file_name}'...")
 
     try:
-        with open(file_name, "r", encoding="utf-8") as file:
+        with open(file_name, "r") as file:
             data = file.read()
             print(f"SUCCESS: Archive recovered - {data.strip()}")
             print("STATUS: Normal operations resumed\n")

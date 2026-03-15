@@ -10,7 +10,7 @@ def main() -> None:
     print(f"Initializing new storage unit: {file_name}")
 
     try:
-        write_file = open(file_name, "w", encoding="utf-8")
+        write_file = open(file_name, "w")
         print("Storage unit created successfully...")
         print()
         print("Inscribing preservation data...")
@@ -18,7 +18,7 @@ def main() -> None:
         print(data)
         print("Data inscription complete. Storage unit sealed.")
         print(f"Archive '{file_name}' ready for long-term preservation.")
-    except PermissionError: #test this permition error that will raise or not if not change it to FileNotFoundError
+    except PermissionError:
         print("ERROR: Permission denied. Cannot create archive.")
     except Exception as e:
         print(f"Error: Unexpected Error ({e})")

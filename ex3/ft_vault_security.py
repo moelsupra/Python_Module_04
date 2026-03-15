@@ -7,13 +7,13 @@ def main() -> None:
     print("\nInitiating secure vault access...")
 
     try:
-        with open(read_file_name, "r", encoding="utf-8") as read_file:
+        with open(read_file_name, "r") as read_file:
             print("Vault connection established with failsafe protocols\n")
             print("SECURE EXTRACTION:")
             content = read_file.read()
             print(content)
 
-        with open(write_file_name, "w", encoding="utf-8") as write_file:
+        with open(write_file_name, "w") as write_file:
             print("SECURE PRESERVATION:")
             write_file.write(data)
             print(data, end="")
